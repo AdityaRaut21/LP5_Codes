@@ -8,7 +8,7 @@ void parallelBubbleSort(vector<int>& arr) {
     int n = arr.size();
     for(int i=0; i<n; i++) {
         #pragma omp parallel for
-        for(int j=0; j<n-i; j++) {
+        for(int j=0; j<n-i-1; j++) {
             if(arr[j] > arr[j+1]) {
                 #pragma omp critical
                 swap(arr[j], arr[j+1]);
